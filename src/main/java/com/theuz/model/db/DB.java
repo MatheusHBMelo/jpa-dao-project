@@ -10,13 +10,13 @@ public class DB {
     private static EntityManagerFactory emf = null;
     private static EntityManager em = null;
 
-    public static EntityManager getConnection(){
-        if (em == null){
+    public static EntityManager getConnection() {
+        if (em == null) {
             try {
                 emf = Persistence.createEntityManagerFactory("jpa-test-unit");
                 EntityManager em = emf.createEntityManager();
                 return em;
-            } catch (RuntimeException e){
+            } catch (RuntimeException e) {
                 throw new DbException(e.getMessage());
             }
         }
