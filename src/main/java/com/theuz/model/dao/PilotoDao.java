@@ -7,9 +7,14 @@ import java.util.List;
 
 public interface PilotoDao {
     void insert(Piloto piloto);
+
     void update(Piloto piloto);
+
     void remove(Integer id);
+
     Piloto findById(Integer id);
+
     List<Piloto> findByEquipe(Equipe equipe);
+
     List<Piloto> findAll();
 }
