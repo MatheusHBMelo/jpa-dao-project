@@ -3,6 +3,7 @@ package com.theuz.model.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -84,9 +85,10 @@ public class Equipe implements Serializable {
 
     @Override
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return "ID: " + id +
                 " - Name: " + name +
-                " - Data de fundação: " + dataFundacao +
+                " - Data de fundação: " + sdf.format(dataFundacao) +
                 " - Pilotos: " + pilotos;
     }
 }
