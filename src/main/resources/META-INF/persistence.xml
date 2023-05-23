@@ -7,8 +7,8 @@
 
     <persistence-unit name="jpa-test-unit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.theuz.model.Piloto</class>
-        <class>com.theuz.model.Equipe</class>
+        <class>com.theuz.model.entities.Piloto</class>
+        <class>com.theuz.model.entities.Equipe</class>
 
         <properties>
             <!-- Configurações do provedor de persistência -->
