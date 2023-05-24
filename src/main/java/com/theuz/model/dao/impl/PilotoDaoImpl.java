@@ -42,12 +42,12 @@ public class PilotoDaoImpl implements PilotoDao {
     @Override
     public void update(Piloto piloto) {
         if (piloto == null) {
-            throw new IllegalArgumentException("O piloto não pode ser nulo.");
+            throw new IllegalArgumentException("O objeto piloto não pode ser nulo.");
         } else {
             try {
                 Piloto pilotoPersistido = em.find(Piloto.class, piloto.getId());
                 if (pilotoPersistido == null) {
-                    throw new NoResultException("O piloto não existe no banco de dados!");
+                    throw new NoResultException("O piloto não existe no banco de dados.");
                 } else {
                     if (piloto.getName() == null) {
                         piloto.setName(pilotoPersistido.getName());

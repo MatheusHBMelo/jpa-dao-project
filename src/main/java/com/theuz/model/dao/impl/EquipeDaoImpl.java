@@ -18,7 +18,7 @@ public class EquipeDaoImpl implements EquipeDao {
     @Override
     public void insert(Equipe equipe) {
         if (equipe == null) {
-            throw new IllegalArgumentException("A equipe não pode ser nula!");
+            throw new IllegalArgumentException("A equipe não pode ser nula.");
         } else {
             try {
                 em.getTransaction().begin();
@@ -38,12 +38,12 @@ public class EquipeDaoImpl implements EquipeDao {
     @Override
     public void update(Equipe equipe) {
         if (equipe == null) {
-            throw new IllegalArgumentException("A equipe não pode ser nula!");
+            throw new IllegalArgumentException("A equipe não pode ser nula.");
         } else {
             try {
                 Equipe equipePersistida = em.find(Equipe.class, equipe.getId());
                 if (equipePersistida == null) {
-                    throw new NoResultException("A equipe não existe no banco de dados!");
+                    throw new NoResultException("A equipe não existe no banco de dados.");
                 } else {
                     if (equipe.getName() == null) {
                         equipe.setName(equipePersistida.getName());
@@ -67,7 +67,7 @@ public class EquipeDaoImpl implements EquipeDao {
     @Override
     public void remove(Integer id) {
         if (id == null) {
-            throw new IllegalArgumentException("O id não pode ser nulo!");
+            throw new IllegalArgumentException("O id não pode ser nulo.");
         } else {
             try {
                 Equipe equipePersistida = em.find(Equipe.class, id);
@@ -76,7 +76,7 @@ public class EquipeDaoImpl implements EquipeDao {
                     em.remove(equipePersistida);
                     em.getTransaction().commit();
                 } else {
-                    throw new NoResultException("A equipe não existe no banco de dados!");
+                    throw new NoResultException("A equipe não existe no banco de dados.");
                 }
             } catch (RuntimeException e) {
                 if (em.getTransaction().isActive()) {
@@ -90,14 +90,14 @@ public class EquipeDaoImpl implements EquipeDao {
     @Override
     public Equipe findById(Integer id) {
         if (id == null) {
-            throw new IllegalArgumentException("O id não pode ser nulo!");
+            throw new IllegalArgumentException("O id não pode ser nulo.");
         } else {
             try {
                 Equipe equipePersistida = em.find(Equipe.class, id);
                 if (equipePersistida != null) {
                     return equipePersistida;
                 } else {
-                    throw new NoResultException("A equipe não existe no banco de dados!");
+                    throw new NoResultException("A equipe não existe no banco de dados.");
                 }
             } catch (RuntimeException e) {
                 e.printStackTrace();
